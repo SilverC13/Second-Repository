@@ -6,12 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-class Main extends Application
+public class hello extends Application
 {
 	
-	Button button;
-	
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		launch(args);	
 	}
@@ -20,11 +18,11 @@ class Main extends Application
 	public void start(Stage primaryStage) throws Exception
 	{
 		primaryStage.setTitle("Title of the Window");
-		button = new Button();
-		button.setText("Click me");
+		Button btn = new Button();
+		btn.setText("Click me");
 
 		StackPane layout = new StackPane();
-		layout.getChildren().add(button);
+		layout.getChildren().add(btn);
 
 		Scene scene = new Scene(layout, 300, 250);
 		primaryStage.setScene(scene);
