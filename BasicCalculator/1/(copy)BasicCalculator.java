@@ -55,42 +55,38 @@ class BasicCalculator
 			Answer = FirstNumber + SecondNumber;
 			System.out.println(Answer);
 			
-
 			String Reply;
 			String message3 =("Do you want to play again?\n");
 			int x2 = 1;
-			char c;
-			System.out.print(message3);
-			
+			char c;;
 			do
 			{
+				System.out.print(message3);
 				Reply = UserInput.nextLine();
-				
-				
+				try
+				{
 					c = Reply.charAt(0);
 					if (c == 'Y' || (c == 'y'))
 					{
 						x2 = 2;
-						
 					}
-					
 					else if (c == 'n' || (c == 'N') )
 					{
 						x = 2;
-						x2 = 2;
-						System.out.println("Goodbye :-)");
 					}
-					 // adding in the break and taking out the else seems to fuck it up
-					else if ( c != 'Y' || (c !='y') || (c != 'N') || (c != 'n') )
-					{	
-					System.out.println("Please enter Y for Yes or N for no, not '" + c + "'");
+					break;
+				}
+				catch (Exception e)
+				{
+					System.out.println("Please enter Y for Yes or N for no");
 					c = Character.MIN_VALUE;
 					Reply = null;
 					System.out.print(message3);
 					// reset the values
-					}
+				}
 			}
-			while (x2 == 1 );
+			while (c != 'Y' || (c != 'y') || (c != 'N') || (c != 'n') );
+
 			
 		}
 		while (x==1);
